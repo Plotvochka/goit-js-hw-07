@@ -10,13 +10,15 @@ destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
   let size = 30;
+  let arr = [];
   box.innerHTML = '';
   if (input.value >= 1 && input.value <= 100) {
     for (let i = 0; i < input.value; i++) {
       const boxes = `<div style="width: ${size}px;height: ${size}px; background-color: ${getRandomHexColor()}"></div>`;
-      box.insertAdjacentHTML('beforeend', boxes);
+      arr += boxes;
       size += 10;
     }
+    box.insertAdjacentHTML('beforeend', arr);
     input.value = '';
   }
 }
